@@ -1,19 +1,19 @@
 export interface Animal {
   id: string;
   name: string;
-  type: 'dog' | 'cat' | 'bird' | 'rabbit' | 'other';
+  type: 'dog' | 'cat' | 'bird' | 'rabbit' | 'other'; // نوع حیوان
   breed: string;
   age: number;
   weight: number;
-  gender: 'male' | 'female';
-  status: 'healthy' | 'sick' | 'recovering' | 'critical';
+  gender: 'male' | 'female'; // جنسیت
+  status: 'healthy' | 'sick' | 'recovering' | 'critical'; // وضعیت سلامت
   lastCheckup: string;
   nextCheckup?: string;
   ownerName: string;
   ownerPhone: string;
-  medicalHistory: MedicalRecord[];
-  medications: Medication[];
-  images: string[];
+  medicalHistory: MedicalRecord[]; // اجباری، حتی اگر خالی باشد []
+  medications: Medication[];       // اجباری، حتی اگر خالی باشد []
+  images: string[];                // اجباری، حتی اگر خالی باشد []
   color?: string;
   microchip?: string;
   insuranceNumber?: string;
