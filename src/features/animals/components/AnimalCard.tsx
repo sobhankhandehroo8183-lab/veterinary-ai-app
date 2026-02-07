@@ -6,21 +6,8 @@ import {
   Edit, Trash2, Camera, Share2, Star, Weight, User 
 } from 'lucide-react';
 
-// تعریف type موقت تا فایل animal.ts ساخته شود
-interface Animal {
-  id: string;
-  name: string;
-  type: 'dog' | 'cat' | 'bird' | 'rabbit' | 'other';
-  breed: string;
-  age: number;
-  weight: number;
-  gender: 'male' | 'female';
-  status: 'healthy' | 'sick' | 'recovering' | 'critical';
-  lastCheckup: string;
-  nextCheckup?: string;
-  ownerName: string;
-  ownerPhone: string;
-}
+// استفاده از تایپ اصلی Animal
+import { Animal } from '../types/animal';
 
 interface AnimalCardProps {
   animal: Animal;
@@ -59,7 +46,8 @@ const AnimalCard: React.FC<AnimalCardProps> = ({ animal, onEdit, onDelete, onVie
   };
 
   const getGenderIcon = () => {
-    return animal.gender === 'male' ? '♂' : '♀';
+    // اگر gender در تایپ Animal وجود ندارد، یک مقدار پیش‌فرض برگردانید
+    return (animal as any).gender === 'male' ? '♂' : '♀';
   };
 
   const statusConfig = getStatusConfig();

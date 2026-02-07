@@ -37,8 +37,8 @@ import { Animal } from '../features/animals/types/animal';
 
 const AnimalsPage: React.FC = () => {
   // Stateها
-  const [animals, setAnimals] = useState<Animal[]>(animalsData);
-  const [filteredAnimals, setFilteredAnimals] = useState<Animal[]>(animalsData);
+  const [animals, setAnimals] = useState<Animal[]>(animalsData as Animal[]);
+const [filteredAnimals, setFilteredAnimals] = useState<Animal[]>(animalsData as Animal[]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState<string>('all');
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
